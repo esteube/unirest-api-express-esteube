@@ -26,7 +26,7 @@ app.use('/', routes);
 app.use('/users', users);
 
 app.get('/books', function(req, res) {
-    unirest.get('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=' + NYT_API_KEY)
+    unirest.get('http://api.nytimes.com/svc/books/v3/lists/hardcover-fiction.json?api-key=' + process.env.KEY)
       .end(function (response) {
         console.log(response.body);
       })
